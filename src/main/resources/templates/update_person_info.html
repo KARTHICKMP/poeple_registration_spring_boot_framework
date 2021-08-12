@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Person Registration</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+			<h1>Update Person Registration Information</h1>
+		</div>
+		<form th:action="@{/process_register}" th:object="${person_info}"
+			method="post" style="max-width: 600px; margin: 0 auto;">
+			<div class="m-3">
+				<input type="hidden" th:field="*{id}">
+				<div class="form-group row">
+					<label class="col-4 col-form-label">First Name: </label>
+					<div class="col-8">
+						<input id="firstName" type="text" th:field="*{firstName}"
+							class="form-control" required minlength="2" maxlength="20" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-4 col-form-label">Middle Name: </label>
+					<div class="col-8">
+						<input id="middleName" type="text" th:field="*{middleName}"
+							class="form-control" required minlength="2" maxlength="20" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-4 col-form-label">Family Name: </label>
+					<div class="col-8">
+						<input id="familyName" type="text" th:field="*{familyName}"
+							class="form-control" required minlength="2" maxlength="20" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-4 col-form-label">Date of Birth: </label>
+					<div class="col-8">
+						<input id="dOB" type="date" th:field="*{dOB}" class="form-control"
+							required minlength="2" maxlength="20" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-4 col-form-label">Place of Birth: </label>
+					<div class="col-8">
+						<input id="placeOfBirth" type="text" th:field="*{placeOfBirth}"
+							class="form-control" required minlength="2" maxlength="20" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-4 col-form-label">Nationality: </label>
+					<div class="col-8">
+						<input "nationality" type="text" th:field="*{nationality}"
+							class="form-control" required minlength="2" maxlength="20" />
+					</div>
+				</div>
+
+				<div align="right">
+					<button type="submit" class="btn btn-primary">Update</button>
+					<a th:href="@{/people_list}" class="btn btn-danger">Cancel</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>	
