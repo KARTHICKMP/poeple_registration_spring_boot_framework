@@ -4,6 +4,7 @@ pipeline {
         stage('Compile and Clean') { 
             steps {
                 script{
+                    sh "env"			
                     sh "mvn clean compile"
                 }
             }
