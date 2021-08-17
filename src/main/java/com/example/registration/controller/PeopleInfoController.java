@@ -27,7 +27,7 @@ public class PeopleInfoController {
 	
 	// display list of employees
 	@GetMapping("/people_list")
-	public String viewHomePage(Model model) {
+	public <peopleInfoService> String viewHomePage(Model model) {
 		model.addAttribute("listPeople", peopleInfoService.getAllPeopleInfo());
 		return "people_list";
 	}
