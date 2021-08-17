@@ -4,9 +4,7 @@ pipeline {
         stage('Compile and Clean') { 
             steps {
                 script{
-                    def mvnHome = tool name: 'maven_3_8_2', type: 'maven'
-                    def mvnCMD = "${mvnHome}/bin/mvn"
-                    sh "${mvnCMD} clean package"
+                    sh "mvn clean compile"
                 }
             }
         }
