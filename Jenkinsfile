@@ -14,12 +14,7 @@ pipeline {
             }
         }
 
-	    stage('Unittest'){
-    		steps {
-			    sh "mvn test"
-			}
-		}
-	
+
 	    stage('deploy') { 
 	        steps {
 	            sh "mvn package"
