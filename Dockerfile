@@ -1,6 +1,6 @@
 FROM openjdk:8
 
-ADD target/people-registartion-application people-registartion-application.jar
+ADD /var/lib/jenkins/workspace/PeopleRegistration_Project_Deployment/target/people-registartion-application people-registartion-application.jar
 
 EXPOSE 8081
 
